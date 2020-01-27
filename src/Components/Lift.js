@@ -10,9 +10,10 @@ function Lift() {
   }
 
   const repInputBoxes = sets.map(setNum => {
-    return <InputBox name={`Set ${setNum} Reps`} />
-  }
-  )
+    return <InputBox name={`Set ${setNum} Reps`}
+                     key={setNum}
+    />
+  })
 
   return (
     <div>
