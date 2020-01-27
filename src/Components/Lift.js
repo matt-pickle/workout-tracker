@@ -1,16 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import InputBox from "./InputBox";
 
 function Lift() {
+  const [sets, setSets] = useState([1]);
+
+  function addSet() {
+    const newSetNum = sets.length + 1;
+    setSets(prev => [...prev, newSetNum]);
+  }
+
+  const repInputBoxes = sets.map(setNum => {
+    return <InputBox name={`Set ${setNum} Reps`} />
+  }
+  )
+
   return (
     <div>
       <InputBox name="Lift" />
       <InputBox name="Weight" />
-      <InputBox name="Set 1 Reps" />
-      <InputBox name="Set 2 Reps" />
-      <InputBox name="Set 3 Reps" />
-      <InputBox name="Set 4 Reps" />
-      <InputBox name="Set 5 Reps" />
+      {repInputBoxes}
+      <button onClick={addSet}>Add Set</button>
     </div>
   )
 }
