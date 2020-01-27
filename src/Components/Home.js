@@ -1,8 +1,11 @@
 import React from "react";
+import Lift from "./Lift";
 
 function Home() {
   return (
-    <p>Home Page</p>
+    <div>
+      <Lift />
+    </div>
   )
 }
 
