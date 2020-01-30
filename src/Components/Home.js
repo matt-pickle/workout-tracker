@@ -23,7 +23,18 @@ function Home() {
     } else {
       setWorkoutArr([...workoutArr, liftObj]);
     }
-  }  
+  }
+  
+  //Saves current workout to localStorage under today's date
+  function saveWorkout() {
+    const today = new Date();
+    const month = today.getMonth() + 1;
+    const date = today.getDate();
+    const year = today.getFullYear();
+    const dateString = `${month}-${date}-${year}`;
+    
+    localStorage.setItem(dateString, JSON.stringify(workoutArr));
+  }
 
   const allLifts = lifts.map(liftNum => {
     return <Lift key={liftNum}
@@ -36,6 +47,7 @@ function Home() {
     <div>
       {allLifts}
       <button onClick={addLift}>Add Lift</button>
+      <button onClick={saveWorkout}>Workout Complete!</button>
     </div>
   )
 }
