@@ -2,17 +2,14 @@ import React, {useState, useEffect} from "react";
 
 function InputBox(props) {
   const [input, setInput] = useState("");
-  const [data, setData] = useState({});
 
   function handleChange(event) {
     setInput(event.target.value);
   }
-  
+
   useEffect(() => {
-    setData({
-      [props.name]: input
-    })
-  }, [input]);
+    props.addToLift(props.name, input)
+  }, [input])
 
   return (
     <input type="text"
@@ -22,6 +19,5 @@ function InputBox(props) {
     />
   )
 }
-
 
 export default InputBox;
