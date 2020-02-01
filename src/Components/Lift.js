@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import InputBox from "./InputBox";
 
-function Lift(props) {
+function Lift(props, ref) {
   const [sets, setSets] = useState([1]);
   const [liftObj, setLiftObj] = useState({id: props.id});
+  const repsInputRef = useRef(null);
 
   function addSet() {
     const newSetNum = sets.length + 1;
@@ -14,13 +15,19 @@ function Lift(props) {
     setLiftObj({...liftObj, [key]: value});
   }
 
+  //Focuses the new input box when a new set is added
+  useEffect(() => {    
+    repsInputRef.current.focus();
+  }, [sets]);
+
   useEffect(() => {
     props.addToWorkout(liftObj);
-  }, [liftObj])
+  }, [liftObj]);
 
   const repInputBoxes = sets.map(setNum => {
     return <InputBox name={`Set ${setNum} Reps`}
                      key={setNum}
+                     ref={repsInputRef}
                      addToLift={addToLift}
     />
   })
@@ -29,6 +36,7 @@ function Lift(props) {
     <div>
       <InputBox name="Lift"
                 addToLift={addToLift}
+                ref={ref}
       />
       <InputBox name="Weight"
                 addToLift={addToLift}
@@ -39,4 +47,4 @@ function Lift(props) {
   )
 }
 
-export default Lift;
+export default React.forwardRef(Lift);

@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Lift from "./Lift";
 
 function Home() {
   const [lifts, setLifts] = useState([1]);
   const [workoutArr, setWorkoutArr] = useState([]);
+  const liftNameInputRef = useRef(null);
 
   function addLift() {
     const newLiftNum = lifts.length + 1;
@@ -36,9 +37,15 @@ function Home() {
     localStorage.setItem(dateString, JSON.stringify(workoutArr));
   }
 
+  //Focuses the Lift input when a new lift is added
+  useEffect(() => {
+    liftNameInputRef.current.focus();
+  }, [lifts]);
+
   const allLifts = lifts.map(liftNum => {
     return <Lift key={liftNum}
                  id={liftNum}
+                 ref={liftNameInputRef}
                  addToWorkout={addToWorkout}
     />
   })

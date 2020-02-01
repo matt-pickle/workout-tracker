@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 
-function InputBox(props) {
+function InputBox(props, ref) {
   const [input, setInput] = useState("");
 
   function handleChange(event) {
@@ -16,8 +16,9 @@ function InputBox(props) {
            placeholder={props.name}
            value={input}
            onChange={handleChange}
+           ref={ref}
     />
   )
 }
 
-export default InputBox;
+export default React.forwardRef(InputBox);
