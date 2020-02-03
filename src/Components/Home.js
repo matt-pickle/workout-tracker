@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import Lift from "./Lift";
+import Timer from "./Timer";
 
 function Home() {
   const [lifts, setLifts] = useState([1]);
@@ -55,6 +56,7 @@ function Home() {
       {allLifts}
       <button onClick={addLift}>Add Lift</button>
       <button onClick={saveWorkout}>Workout Complete!</button>
+      <Timer />
     </div>
   )
 }
