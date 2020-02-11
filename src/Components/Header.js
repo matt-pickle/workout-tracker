@@ -1,16 +1,17 @@
 import React from "react";
 import Button from "./Button";
+import "../Styles/Header.css";
 
 function Header() {
   return (
-    <div>
-      <Button text="History"
+    <div className="header">
+      <Button text="HISTORY"
               link="/history"
       />
-      <Button text="Current"
+      <Button text="CURRENT"
               link="/"
       />
-      <Button text="Weight"
+      <Button text="WEIGHT"
               link="/weight"
       />
     </div>

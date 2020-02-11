@@ -8,7 +8,7 @@ import Weight from "./Weight";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <Switch>
         <Route exact path="/"><Home /></Route>
