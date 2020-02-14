@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import InputBox from "./InputBox";
+import "../Styles/Lift.css";
 
 function Lift(props, ref) {
   const [sets, setSets] = useState([1]);
@@ -33,7 +34,7 @@ function Lift(props, ref) {
   })
 
   return (
-    <div>
+    <div className="liftBox">
       <InputBox name="Lift"
                 addToLift={addToLift}
                 ref={ref}
@@ -42,7 +43,7 @@ function Lift(props, ref) {
                 addToLift={addToLift}
       />
       {repInputBoxes}
-      <button onClick={addSet}>Add Set</button>
+      <button className="addSetButton" onClick={addSet}>Add Set</button>
     </div>
   )
 }

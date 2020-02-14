@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "../Styles/InputBox.css";
 
 function InputBox(props, ref) {
   const [input, setInput] = useState("");
@@ -12,12 +13,17 @@ function InputBox(props, ref) {
   }, [input])
 
   return (
-    <input type="text"
-           placeholder={props.name}
-           value={input}
-           onChange={handleChange}
-           ref={ref}
-    />
+    <div className="inputBox">
+      <label for={props.name}>{props.name}</label>
+      <div className="inputContainer" id={props.name + "Container"}>
+        <input type="text"
+               id={props.name}
+               value={input}
+               onChange={handleChange}
+               ref={ref}
+        />
+      </div>
+    </div>
   )
 }
 
