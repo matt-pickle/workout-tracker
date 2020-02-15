@@ -1,14 +1,15 @@
 import React, {useState} from "react";
 import TimerInputs from "./TimerInputs";
 import TimerDisplay from "./TimerDisplay";
+import Button from "./Button";
 
 function Timer() {
   const [timerIsRunning, setTimerIsRunning] = useState(false);
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
   
-  const startButton = <button onClick={startTimer}>Start</button>;
-  const stopButton = <button onClick={stopTimer}>Stop</button>;
+  const startButton = <Button text="START" onClick={startTimer} />;
+  const stopButton = <Button text="STOP" onClick={stopTimer} />;
 
   function startTimer() {
     setTimerIsRunning(true);
@@ -31,7 +32,6 @@ function Timer() {
                      setSeconds={setSeconds}
         />}
       {timerIsRunning ? stopButton : startButton}
-      <button>Reset</button>
     </div>
   )
 }

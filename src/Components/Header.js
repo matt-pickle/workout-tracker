@@ -1,17 +1,17 @@
 import React from "react";
-import Button from "./Button";
+import NavButton from "./NavButton";
 import "../Styles/Header.css";
 
 function Header() {
   return (
     <div className="header">
-      <Button text="HISTORY"
+      <NavButton text="HISTORY"
               link="/history"
       />
-      <Button text="CURRENT"
+      <NavButton text="CURRENT"
               link="/"
       />
-      <Button text="WEIGHT"
+      <NavButton text="WEIGHT"
               link="/weight"
       />
     </div>

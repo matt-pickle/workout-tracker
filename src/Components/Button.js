@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
 import "../Styles/Button.css";
 
 function Button(props) {
@@ -14,18 +13,16 @@ function Button(props) {
   }
 
   return (
-    <Link to={props.link}>
-      <button className={`navButton ${hoverClass}`}
-              onMouseEnter={hover}
-              onMouseLeave={unHover}
-              onTouchStart={hover}
-              onTouchEnd={unHover}
-      >
-        {props.text}
-      </button>
-    </Link>
+    <button className={`button ${hoverClass}`}
+            onMouseEnter={hover}
+            onMouseLeave={unHover}
+            onTouchStart={hover}
+            onTouchEnd={unHover}
+            onClick={props.onClick}
+    >
+      {props.text}
+    </button>
   )
 }
 
-
-export default Button;
+export default Button

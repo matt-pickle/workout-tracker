@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import Lift from "./Lift";
+import Button from "./Button";
 import Timer from "./Timer";
 import "../Styles/Home.css";
 
@@ -53,12 +54,16 @@ function Home() {
   })
 
   return (
-    <div>
+    <div className="home">
       <div className="liftsContainer">
         {allLifts}
-        <button onClick={addLift}>Add Lift</button>
+        <Button text="ADD LIFT"
+                onClick={addLift}
+        />
       </div>
-      <button onClick={saveWorkout}>Workout Complete!</button>
+      <Button text="WORKOUT COMPLETE!" 
+              onClick={saveWorkout}
+      />
       <Timer />
     </div>
   )
