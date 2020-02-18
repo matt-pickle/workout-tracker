@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import TimerInputs from "./TimerInputs";
 import TimerDisplay from "./TimerDisplay";
 import Button from "./Button";
+import "../Styles/Timer.css";
 
 function Timer() {
   const [timerIsRunning, setTimerIsRunning] = useState(false);
@@ -20,7 +21,7 @@ function Timer() {
   }
 
   return (
-    <div>
+    <div className="timer">
       {timerIsRunning ?
         <TimerDisplay minutes={minutes}
                       seconds={seconds}

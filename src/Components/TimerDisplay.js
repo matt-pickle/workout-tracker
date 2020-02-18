@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import "../Styles/TimerDisplay.css";
 
 function TimerDisplay(props) {
   const [minutesRemaining, setMinutesRemaining] = useState(props.minutes);
@@ -36,7 +37,7 @@ function TimerDisplay(props) {
   }
 
     return (
-    <div>
+    <div className="timerDisplay">
       <p>{`${minutesRemaining} : ${secondsRemaining}`}</p>
       {timesUp()}
     </div>

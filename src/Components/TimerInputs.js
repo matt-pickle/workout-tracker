@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
+import "../Styles/TimerInputs.css";
 
 function TimerInputs(props) {
   
@@ -39,10 +40,16 @@ function TimerInputs(props) {
 
   return (
     <form>
-      <select value={props.minutes} onChange={changeMinutes}>
+      <select className="timerInput"
+              value={props.minutes}
+              onChange={changeMinutes}
+      >
        {minutesOptions}
       </select>
-      <select value={props.seconds} onChange={changeSeconds}>
+      <select className="timerInput"
+              value={props.seconds}
+              onChange={changeSeconds}
+      >
        {secondsOptions}
       </select>
     </form>
