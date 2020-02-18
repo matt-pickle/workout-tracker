@@ -9,7 +9,7 @@ function TimerDisplay(props) {
   const timerMilliseconds = props.minutes * 60000 + props.seconds * 1000;
   const endingTime = startingTime + timerMilliseconds;
 
-  //Adds zero in front of single-digit numbers
+  //Adds zero in front of single-digit numbers and changes 60 to 00
   function addZero(num) {
     if (num < 10 && num >= 0) {
       return `0${num}`;
@@ -18,13 +18,17 @@ function TimerDisplay(props) {
     }
   }
 
-  //Checks current time against timer's end time every second
+  //Calculates minutes and seconds remaining and sets them to state
+  function calculateTimeRemaining() {
+    setSecondsRemaining(addZero(Math.floor(((endingTime - Date.now()) / 1000) % 60)));
+    setMinutesRemaining(addZero(Math.floor(((endingTime - Date.now()) / 60000) % 60)));
+  }
+
+  //Runs calculateTimeRemaining() every second
   useEffect(() => {
     let timer = null;
-    timer = setInterval(() => {
-      setMinutesRemaining(addZero(Math.round((endingTime - Date.now()) / 60000)));
-      setSecondsRemaining(addZero(Math.round(((endingTime - Date.now()) % 60000) / 1000)));
-    }, 1000);
+    calculateTimeRemaining();
+    timer = setInterval(calculateTimeRemaining, 1000);
     return () => clearInterval(timer);
   }, []);
 
