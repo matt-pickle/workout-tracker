@@ -29,15 +29,19 @@ function Home() {
     }
   }
   
-  //Saves current workout to localStorage under today's date
+  //Saves workout to localStorage
   function saveWorkout() {
     const today = new Date();
     const month = today.getMonth() + 1;
     const date = today.getDate();
     const year = today.getFullYear();
     const dateString = `${month}-${date}-${year}`;
+
+    const workoutObj = {[dateString]: workoutArr};
+    const workoutHistory = JSON.parse(localStorage.getItem("workoutHistory")) || [];
+    const newWorkoutHistory = [...workoutHistory, workoutObj];
     
-    localStorage.setItem(dateString, JSON.stringify(workoutArr));
+    localStorage.setItem("workoutHistory", JSON.stringify(newWorkoutHistory));
   }
 
   //Focuses the Lift input when a new lift is added
