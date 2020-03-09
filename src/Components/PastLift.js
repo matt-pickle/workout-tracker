@@ -1,10 +1,11 @@
 import React from "react";
+import "../Styles/PastLift.css";
 
 function PastLift(props) {
   return (
-    <div>
+    <div className="pastLift">
       <p>Lift: {props.lift}</p>
-      <p>Weight: {props.weight}</p>
+      <p>Weight: {props.weight}lbs</p>
       {props.reps}
     </div>
   )

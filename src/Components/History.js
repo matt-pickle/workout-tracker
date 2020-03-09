@@ -1,4 +1,5 @@
 import React from "react";
+import "../Styles/History.css";
 import PastWorkout from "./PastWorkout";
 
 function History() {
@@ -15,10 +16,8 @@ function History() {
   })
   
   return (
-    <div>
-      <p>History Page</p>
-      <p>{JSON.stringify(workoutHistory)}</p>
-      <p>{pastWorkouts}</p>
+    <div className="history">
+      {pastWorkouts}
     </div>
   )
 }

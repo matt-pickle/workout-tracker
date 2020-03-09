@@ -1,4 +1,5 @@
 import React from "react";
+import "../Styles/PastWorkout.css";
 import PastLift from "./PastLift";
 
 function PastWorkout(props) {
@@ -18,9 +19,11 @@ function PastWorkout(props) {
   })
   
   return (
-    <div>
-      <p>{props.date}: </p>
-      {pastLifts}
+    <div className="pastWorkout">
+      <p className="dateText">{props.date}</p>
+      <div className="pastLiftsContainer">
+        {pastLifts}
+      </div>
     </div>
   )
 }
