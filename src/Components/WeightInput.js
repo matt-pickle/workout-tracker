@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import "../Styles/WeightInput.css";
 import Button from "./Button";
 
-function WeightInput() {
+function WeightInput(props) {
   const [input, setInput] = useState("");
 
   const today = new Date();
@@ -15,11 +15,12 @@ function WeightInput() {
     setInput(event.target.value);
   }
 
-  //Saves current weight to localStorage
+  //Saves current weight to localStorage and state
   function addToHistory() {
     const weightHistory = JSON.parse(localStorage.getItem("weightHistory")) || {};
     const newWeightHistory = {...weightHistory, [dateString]: input};
     localStorage.setItem("weightHistory", JSON.stringify(newWeightHistory));
+    props.setWeightHistory(weightHistory);
   }
 
   return (
