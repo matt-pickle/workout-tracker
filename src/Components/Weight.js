@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import WeightInput from "./WeightInput";
 import WeightChart from "./WeightChart";
+import "../Styles/Weight.css";
 
 function Weight() {
   const [weightHistory, setWeightHistory] = useState(
@@ -8,9 +9,9 @@ function Weight() {
   );
 
   return (
-    <div>
+    <div className="weightContainer">
       <WeightInput setWeightHistory={setWeightHistory} />
-      <WeightChart weightHistory={weightHistory} />
+      <WeightChart weightHistory={weightHistory}      />
     </div>
   )
 }

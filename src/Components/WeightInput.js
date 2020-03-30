@@ -20,7 +20,7 @@ function WeightInput(props) {
     const weightHistory = JSON.parse(localStorage.getItem("weightHistory")) || {};
     const newWeightHistory = {...weightHistory, [dateString]: input};
     localStorage.setItem("weightHistory", JSON.stringify(newWeightHistory));
-    props.setWeightHistory(weightHistory);
+    props.setWeightHistory(newWeightHistory);
   }
 
   return (
