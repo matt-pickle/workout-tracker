@@ -18,7 +18,7 @@ function TimerInputs(props) {
     minutesArr.push(i);
   }
   const minutesOptions = minutesArr.map(num => {
-    return <option>{addZero(num)}</option>
+    return <option key={num}>{addZero(num)}</option>
   });
 
   //Populates seconds options
@@ -27,7 +27,7 @@ function TimerInputs(props) {
     secondsArr.push(i);
   }
   const secondsOptions = secondsArr.map(num => {
-    return <option>{addZero(num)}</option>
+    return <option key={num}>{addZero(num)}</option>
   });
 
   function changeMinutes(event) {

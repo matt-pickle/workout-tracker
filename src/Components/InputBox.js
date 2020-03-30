@@ -14,7 +14,7 @@ function InputBox(props, ref) {
 
   return (
     <div className="inputBox">
-      <label for={props.name}>{props.name}</label>
+      <label htmlFor={props.name}>{props.name}</label>
       <div className="inputContainer" id={props.name + "Container"}>
         <input type="text"
                id={props.name}
