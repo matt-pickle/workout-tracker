@@ -11,22 +11,37 @@ function WeightChart(props) {
     datasets: [{
       label: "Weight",
       data: weightsArr,
-      borderColor: "rgb(0, 0, 0)",
-      borderWidth: 3
+      borderColor: "rgb(100, 100, 100)",
+      borderWidth: 3,
+      pointBackgroundColor: "rgb(100, 100, 100)"
     }]
   };
   const chartOptions = {
+    legend: {
+      display: false
+    },
     scales: {
       xAxes: [{
         gridLines: {
           lineWidth: 1,
           color: "rgb(0, 0, 0)"
+        },
+        ticks: {
+          fontColor: "rgb(100, 100, 100)",
+          fontSize: 12,
+          fontStyle: "bold"
         }
       }],
       yAxes: [{
         gridLines: {
           lineWidth: 1,
           color: "rgb(0, 0, 0)"
+        },
+        ticks: {
+          fontColor: "rgb(100, 100, 100)",
+          fontSize: 12,
+          fontStyle: "bold",
+          lineHeight: 2
         }
       }]
     }

@@ -65,9 +65,11 @@ function Home() {
                 onClick={addLift}
         />
       </div>
-      <Button text="WORKOUT COMPLETE!" 
-              onClick={saveWorkout}
-      />
+      <div className="completeButton">
+        <Button text="WORKOUT COMPLETE!" 
+                onClick={saveWorkout}
+        />
+      </div>
       <Timer />
     </div>
   )
