@@ -6,6 +6,7 @@ function WeightChart(props) {
   const datesArr = Object.keys(props.weightHistory) || [];
   const weightsArr = Object.values(props.weightHistory) || [];
   
+  //Data and styling for the chart
   const chartData = {
     labels: datesArr,
     datasets: [{
