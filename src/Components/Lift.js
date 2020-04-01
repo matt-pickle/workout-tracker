@@ -27,7 +27,7 @@ function Lift(props, ref) {
   }, [liftObj]);
 
   const repInputBoxes = sets.map(setNum => {
-    return <InputBox name={`Set ${setNum} Reps`}
+    return <InputBox name={`Set ${setNum}`}
                      key={setNum}
                      ref={repsInputRef}
                      addToLift={addToLift}
@@ -45,6 +45,7 @@ function Lift(props, ref) {
       />
       {repInputBoxes}
       <Button text="ADD SET"
+              id="addSetButton"
               onClick={addSet}
       />
     </div>

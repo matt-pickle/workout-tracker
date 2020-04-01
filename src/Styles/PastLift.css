@@ -6,3 +6,7 @@
   margin: 5px;
   padding-left: 10px;
 }
+
+.boldText {
+  font-weight: 700;
+}

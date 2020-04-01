@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 5px;
+  margin: 2.5px;
 }
 
 label {
@@ -27,7 +27,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
+  width: 28px;
   height: 30px;
   background-color: white;
   border-radius: 0 5px 5px 0;
@@ -36,10 +36,10 @@ input {
 }
 
 #LiftContainer {
-  width: 107px;
+  width: 105px;
 }
 
 #WeightContainer {
-  width: 40px;
+  width: 45px;
 }
 
