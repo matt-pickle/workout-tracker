@@ -7,12 +7,15 @@
 
 .liftsContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 5px;
+  margin: 5px 0 5px 0;
 }
 
-.completeButton {
-  margin: 20px;
+#saveButton {
+  width: 200px;
+  height: 50px;
+  margin: 25px;
 }

@@ -9,8 +9,8 @@ function Timer() {
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
   
-  const startButton = <Button text="START" onClick={startTimer} />;
-  const stopButton = <Button text="STOP" onClick={stopTimer} />;
+  const startButton = <Button text="START" id="startButton" onClick={startTimer} />;
+  const stopButton = <Button text="STOP" id="stopButton"onClick={stopTimer} />;
 
   function startTimer() {
     setTimerIsRunning(true);
