@@ -10,7 +10,8 @@ function History() {
       const workoutDate = Object.keys(workout)
       return (
         <PastWorkout date={workoutDate}
-                    workoutArr={workout[workoutDate]}
+                     workoutArr={workout[workoutDate]}
+                     key={workoutHistory.indexOf(workout) + 1}
         />
       )
     })

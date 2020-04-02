@@ -14,6 +14,7 @@ function PastWorkout(props) {
       <PastLift lift={lift["Lift"]}
                 weight={lift["Weight"]}
                 reps={repsArr}
+                key={lift["id"]}
       />
     )                     
   })
