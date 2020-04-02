@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/PastWorkout.css";
 import PastLift from "./PastLift";
+import Button from "./Button";
 
 function PastWorkout(props) {
   const pastLifts = props.workoutArr.map(lift => {    
@@ -25,6 +26,9 @@ function PastWorkout(props) {
       <div className="pastLiftsContainer">
         {pastLifts}
       </div>
+      <Button text="REMOVE"
+              onClick={() => props.removeWorkout(props.id)}
+      />
     </div>
   )
 }
