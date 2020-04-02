@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e65cbf7fd8f00138c2c8fa36176972ca",
+    "revision": "5970e78d9ec9deb57e0629a588a8b73c",
     "url": "/workout-tracker/index.html"
   },
   {
-    "revision": "ba3d1b6e724679af4e36",
+    "revision": "3f712e38c57c199549d5",
     "url": "/workout-tracker/static/css/main.590de110.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/workout-tracker/static/js/2.76257cc3.chunk.js.LICENSE"
   },
   {
-    "revision": "ba3d1b6e724679af4e36",
-    "url": "/workout-tracker/static/js/main.67bb423e.chunk.js"
+    "revision": "3f712e38c57c199549d5",
+    "url": "/workout-tracker/static/js/main.45881607.chunk.js"
   },
   {
     "revision": "77413a1389e02843ed17",
