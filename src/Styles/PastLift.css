@@ -1,10 +1,18 @@
 .pastLift {
-  width: 115px;
+  display: flex;
+  flex-direction: column;
   background-color: rgb(200, 200, 200);
   color: black;
   border-radius: 5px;
+  line-height: 25px;
   margin: 5px;
-  padding-left: 10px;
+  padding: 10px;
+}
+
+.pastReps {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .boldText {

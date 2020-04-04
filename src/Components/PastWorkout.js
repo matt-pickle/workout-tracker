@@ -9,7 +9,7 @@ function PastWorkout(props) {
     const numOfSets = Object.keys(lift).length - 2;
     let i;
     for (i = 1; i < numOfSets; i++) {
-      repsArr.push(<p><span className="boldText">Set {i}:</span> {lift[`Set ${i}`]} reps</p>);
+      repsArr.push(<span><span className="boldText">Set {i}:</span> {lift[`Set ${i}`]} reps&nbsp;&nbsp;&nbsp;</span>);
     }
     return (
       <PastLift lift={lift["Lift"]}
